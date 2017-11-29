@@ -48,7 +48,7 @@ function getAritleBlock(bloMessage) {
     res.appendChild(pic);
     return res;
 }
-var picLoadFrame = 40,msPerFrame = 25;
+var picLoadFrame = 40,msPerFrame = 10;
 function picLoad(eleid) {
     var ele = document.getElementById("artileCover"+eleid);
     var opNow = parseFloat(ele.style.opacity);
