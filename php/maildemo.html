@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #blo{
+            background: black;
+            height: 100px;
+            width: 100%;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            font-size: 50px;
+            position: relative;
+        }
+        #blo a{
+            display: block;
+            margin-top: 10px;
+            position: absolute;
+            margin-left: 30px;
+        }
+        #blo:focus,#blo:hover{
+            background: pink;
+        }
+    </style>
+<head>
+<body>
+    <div id="blo" onclick="changeColor()">
+        <a>唉，我猜你也没有很惊喜。</a>
+    </div>
+</body>
+</html>

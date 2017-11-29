@@ -1,0 +1,54 @@
+#rightList{
+    background: hsla(0,0%,80%,1);
+    width: 389px;
+    height: 300px;
+    margin-left: 709px;
+    margin-top: -300px;
+}
+#rightListTitle{
+    height: 24px;
+    width: 100%;
+    float: left;
+    cursor: default;
+}
+#rightListTitle a{
+    margin-left: 40px;
+    font-weight: bold;
+    color: hsla(0,0%,30%,1);
+    font-family: "楷体";
+}
+.rightListItem{
+    height: 67px;
+    width: 355px;
+    margin: 0px 2px 2px 2px;
+    float: left;
+    background: hsla(0,0%,90%,1);
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 30px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+.rightListItem:focus,.rightListItem:hover{
+    padding-left: 35px;
+    width: 350px;
+    background: hsla(0,0%,88%,1);
+}
+.rightListItem a1{
+    line-height: 250%;
+    font-family: "宋体";
+    font-weight: 600;
+    color: hsla(0,0%,27%,1);
+    display: block;
+}
+.rightListItem a2{
+    line-height: 100%;
+    font-family: "黑体";
+    font-size: 15px;
+    font-weight: lighter;
+    color: hsla(0,0%,40%,1);
+    display: block;
+    width: 95%;
+    height: 15px;
+    overflow: hidden;
+}

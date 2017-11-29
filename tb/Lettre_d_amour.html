@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>网站？已经在做了。</title>
+	<link rel="icon" href="pics/mainico.ico" type="image/x-icon"/>
+	<link href="css/mainShell.css" rel="stylesheet" type="text/css"/>
+	<style type="text/css">
+		#textPanel{
+			width: 1100px;
+			padding: 0px 280px 50px 280px;
+		}
+	</style>
+</head>
+<body onload="bodyOnload()" onselectstart="return false">
+<div id="titlePicDiv">
+	<div id="topButtonPanel">
+		<div id="topButtonPanelBack">
+			<ul id="buttonList">
+				<a href="index.html">
+					<img src="pics/mainpage/titles/topico.png"
+						 id="topIco" title="首页"/>
+				</a>
+				<li><a>注册</a></li>
+				<li><a>登录</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="mainPanel">
+	<div id="mainPanelTopButtonPanel">
+		<ul id="mainPanelTopButtonList">
+			<a onclick="mainPanelTopButtonListOnclice(0)"><li>首页
+				<div></div>
+			</li></a>
+			<a onclick="mainPanelTopButtonListOnclice(1)"><li style="color: #326987">选考
+				<div style="background: #326987"></div>
+			</li></a>
+			<a onclick="mainPanelTopButtonListOnclice(2)"><li>下棋
+				<div></div>
+			</li></a>
+			<a onclick="mainPanelTopButtonListOnclice(3)"><li>其他
+				<div></div>
+			</li></a>
+			<a onclick="mainPanelTopButtonListOnclice(4)"><li>没写
+				<div></div>
+			</li></a>
+		</ul>
+	</div>
+	<div id="textPanel">
+		<form>
+			<h1>概率论期中测试无法选考解决方案</h1>
+			<p>首先,请<a target="_blank" href="http://202.118.26.80/xkxt">登录选考系统</a></p>
+			<p>请在登录系统之后再进行下面的操作:</p>
+			<p>请选择周数:</p>
+			<input name="week" type="radio" value="" />11
+			<input name="week" type="radio" value="" />12
+			<p>请选择日期:</p>
+			<input name="day" type="radio" value="" />星期日
+			<input name="day" type="radio" value="" />星期一
+			<input name="day" type="radio" value="" />星期二
+			<input name="day" type="radio" value="" />星期三<br/>
+			<input name="day" type="radio" value="" />星期四
+			<input name="day" type="radio" value="" />星期五
+			<input name="day" type="radio" value="" />星期六
+			<p>请选择时间:</p>
+			<input name="time" type="radio" value="" />08:00--09:30
+			<input name="time" type="radio" value="" />10:10--11:40
+			<input name="time" type="radio" value="" />14:00--15:30<br/>
+			<input name="time" type="radio" value="" />16:10--17:40
+			<input name="time" type="radio" value="" />18:30--20:00
+			<p style="color:red">注意:请确认该时间有空座位,再进行选择.否则我也不晓得会发生什么.</p>
+			<input type="submit" style="width:100px" value="选择" onclick="submitit()"/>
+		</form>
+	</div>
+</div>
+<div style="height:70px"></div>
+<script type="text/javascript" src="js/mainShell.js"></script>
+<script>
+    function bodyOnload() {
+        /*
+        if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
+            window.location.href = "mobile.html";
+        */
+        slideInit();
+    }
+</script>
+</body>
+</html>

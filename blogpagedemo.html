@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网站？已经在做了。</title>
+    <link rel="icon" href="pics/mainico.ico" type="image/x-icon"/>
+    <link href="css/mainShell.css" rel="stylesheet" type="text/css"/>
+    <link href="css/articlePageText.css" rel="stylesheet" type="text/css"/>
+    <style>
+        #articleTitlePic{
+            background-image: url("pics/mainpage/displays/display0.png");
+        }
+    </style>
+</head>
+<body onload="bodyOnload()" id="body">
+<div id="loadMask">
+    <div><div></div></div>
+    <a>LOADING...<br>PLEASE&nbsp;WAIT</a>
+</div>
+<div id="titlePicDiv" onselectstart="return false">
+    <div id="topButtonPanel">
+        <div id="topButtonPanelBack">
+            <ul id="buttonList">
+                <a href="index.html">
+                    <img src="pics/mainpage/titles/topico.png"
+                         id="topIco" title="首页"/>
+                </a>
+                <li><a>注册</a></li>
+                <li><a>登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="mainPanel">
+    <div id="mainPanelTopButtonPanel" onselectstart="return false">
+        <ul id="mainPanelTopButtonList">
+            <a onclick="mainPanelTopButtonListOnclice(0)"><li>首页
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(1)"><li style="color: #326987">文章
+                <div style="background: #326987"></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(2)"><li>下棋
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(3)"><li>试题
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(4)"><li>就这
+                <div></div>
+            </li></a>
+        </ul>
+    </div>
+    <div id="textPanel">
+        <div id="articleTitlePic">
+            <div id="articleTitlePicMask"></div>
+            <a1>蒙娜丽莎的微笑</a1>
+            <a2>列奥纳多·达·芬奇创作绘画</a2>
+        </div>
+        <div id="articleAuthorPanel">
+            <a1>2017/11/18&nbsp;17:00</a1>
+            <a2>百度百科</a2>
+            <a3>文章区</a3>
+        </div>
+        <div id="articleTextPanel">
+            <p>《蒙娜丽莎》是意大利文艺复兴时期著名画家列奥纳多·达·芬奇创作的绘画作品。《蒙娜丽莎》成功地塑造了资本主义上升时期一位城市有产阶级的妇女形象。“蒙娜丽莎”看上去，似乎并不符合一般划定的美人们心目中的典型偶像范式，但“她”的魅力，又的确让人难以抗拒。</p>
+            <p>意大利史学家、小说家帕拉蒂科称，达·芬奇生母就是《蒙娜丽莎》的画中人，而她有可能是来自中国大陆的奴隶。弗洛伊德1910年表示，蒙娜丽莎画作背景是中国的景观，甚至“蒙娜丽莎”的长相看起来都像中国人。《蒙娜丽莎》现存法国巴黎卢浮宫博物馆。</p>
+        </div>
+    </div>
+    <div id="footPanel">
+        <div id="linkIcoPanel">
+            <div class="linkIcos"
+                 onclick="window.open('https://github.com/AkiyamaYummy')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/githubIco.png')">
+            </div>
+            <div class="linkIcos"
+                 onclick="window.open('https://weibo.com/MPA001')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/weiboIco.png')">
+            </div>
+            <div class="linkIcos"
+                 onclick="alert('邮件功能还没做，抱歉哈。')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/emailIco.png')">
+            </div>
+            <div class="linkIcosTitle"><a>Github</a></div>
+            <div class="linkIcosTitle"><a>新浪微博</a></div>
+            <div class="linkIcosTitle"><a>邮件投递</a></div>
+        </div>
+        <div id="footPanelBottomLine">
+            <a>Copyright&nbsp;&#169;&nbsp;2017&nbsp;-&nbsp;2017&nbsp;akiyama&nbsp;yummy&nbsp;All rights reserved.</a>
+        </div>
+    </div>
+</div>
+<div id="returnTopButton" onclick="returnTop()"></div>
+<script type="text/javascript" src="js/mainShell.js"></script>
+<script>
+    function bodyOnload() {
+        /*if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
+            window.location.href = "mobile.html"; */
+        mainShellOnload();
+    }
+</script>
+</body>
+</html>

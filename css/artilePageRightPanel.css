@@ -1,0 +1,86 @@
+#textRightPanel{
+    height: 800px;
+    width: 297px;
+    position: absolute;
+    top: 0px; left: 800px;
+    border-left: solid 3px;
+    border-image: -webkit-linear-gradient(hsla(0,0%,0%,0),hsla(0,0%,80%,1),hsla(0,0%,0%,0)) 30 30;
+    border-image: -moz-linear-gradient(hsla(0,0%,0%,0),hsla(0,0%,80%,1),hsla(0,0%,0%,0)) 30 30;
+    border-image: linear-gradient(hsla(0,0%,0%,0),hsla(0,0%,80%,1),hsla(0,0%,0%,0)) 30 30;
+}
+.textRightPanelTitle{
+    height: 30px;
+}
+.textRightPanelTitle ico{
+    float: left;
+    height: 20px;
+    width: 15px;
+    background-size: cover;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.textRightPanelTitle a{
+    float: left;
+    line-height: 80%;
+    font-size: 17px;
+    font-weight: bold;
+    display: block;
+    margin-left: 5px;
+    margin-top: 8px;
+    color: grey;
+    font-family: "楷体";
+}
+#articleRightPanel{
+    height: 400px;
+    width: 100%;
+    margin-top: 25px;
+}
+#articleRightPanel div{
+    width: 100%;
+}
+.rightPanelartileTitleDisplay{
+    cursor: pointer;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    color: hsla(0,0%,30%,1);
+}
+.rightPanelartileTitleDisplay:focus,
+.rightPanelartileTitleDisplay:hover{
+    color: #326987;
+}
+.rightPanelartileTitleDisplay a1{
+    display: block;
+    overflow: hidden;
+    font-size: 15px;
+    height: 20px;
+    width: 150px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 23px;
+    font-family: "宋体";
+    font-weight: bold;
+    color: inherit;
+}
+.rightPanelartileTitleDisplay a2{
+    display: block;
+    overflow: hidden;
+    font-size: 12px;
+    height: 20px;
+    width: 150px;
+    position: absolute;
+    margin-top: 27px;
+    margin-left: 25px;
+    font-family: "Microsoft YaHei";
+    color: hsla(0,0%,30%,1);
+}
+.rightPanelartileTitleDisplay pic{
+    width: 90px;
+    height: 50px;
+    position: absolute;
+    right: 20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}

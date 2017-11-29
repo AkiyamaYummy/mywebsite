@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>连珠五子棋</title>
+    <link rel="icon" href="pics/mainico.ico" type="image/x-icon"/>
+    <link href="css/mainShell.css" rel="stylesheet" type="text/css"/>
+    <link href="css/wuziqi.css" rel="stylesheet" type="text/css"/>
+    <head>
+<body onload="bodyOnload()" onbeforeunload="wuziqibodyBeforeUnload()" onselectstart="return false">
+<div id="loadMask">
+    <div><div></div></div>
+    <a>LOADING...<br>PLEASE&nbsp;WAIT</a>
+</div>
+<div id="titlePicDiv">
+    <div id="topButtonPanel">
+        <div id="topButtonPanelBack">
+            <ul id="buttonList">
+                <a href="index.html">
+                    <img src="pics/mainpage/titles/topico.png"
+                         id="topIco" title="首页"/>
+                </a>
+                <li><a>注册</a></li>
+                <li><a>登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="mainPanel" style="height: 610px;background: hsla(0,0%,20%,1)">
+    <div id="checkerboard">
+        <h1 id="result"></h1>
+    </div>
+    <div class="exeButton" id="olbt" style="margin-top: 5px"
+         onclick="linkStart()">
+        <a>联<br/>机<br/>对<br/>局</a>
+    </div>
+    <div class="exeButton" style="margin-top: 157px"
+         onclick="if(olgame==0)clearBoard()">
+        <a>清<br/>空<br/>棋<br/>盘</a>
+    </div>
+    <div id="broadcast"></div>
+</div>
+<div style="height:70px">
+</div>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" src="js/wuziqi.js"></script>
+<script type="text/javascript" src="js/mainShell.js"></script>
+<script>
+    function bodyOnload(){
+        wuziqiInit();
+        mainShellOnload();
+    }
+</script>
+</body>
+</html>

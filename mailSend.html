@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网站？已经在做了。</title>
+    <link rel="icon" href="pics/mainico.ico" type="image/x-icon"/>
+    <link href="css/mainShell.css" rel="stylesheet" type="text/css"/>
+    <link href="css/articlePageText.css" rel="stylesheet" type="text/css"/>
+    <style>
+        #articleTitlePic{
+            background-image: url("pics/mailSendPage/bg.png");
+        }
+    </style>
+</head>
+<body onload="bodyOnload()" id="body">
+<div id="loadMask">
+    <div><div></div></div>
+    <a>LOADING...<br>PLEASE&nbsp;WAIT</a>
+</div>
+<div id="titlePicDiv" onselectstart="return false">
+    <div id="topButtonPanel">
+        <div id="topButtonPanelBack">
+            <ul id="buttonList">
+                <a href="index.html">
+                    <img src="pics/mainpage/titles/topico.png"
+                         id="topIco" title="首页"/>
+                </a>
+                <li><a>注册</a></li>
+                <li><a>登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="mainPanel">
+    <div id="mainPanelTopButtonPanel" onselectstart="return false">
+        <ul id="mainPanelTopButtonList">
+            <a onclick="mainPanelTopButtonListOnclice(0)"><li>首页
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(1)"><li style="color: #326987">文章
+                <div style="background: #326987"></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(2)"><li>下棋
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(3)"><li>试题
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(4)"><li>就这
+                <div></div>
+            </li></a>
+        </ul>
+    </div>
+    <div id="textPanel">
+        <div id="articleTitlePic">
+            <div id="articleTitlePicMask"></div>
+            <a1>邮件代发(测试版)</a1>
+            <a2>求你们别瞎**发</a2>
+        </div>
+        <div id="articleAuthorPanel">
+            <a1>2017/11/21&nbsp;13:00</a1>
+            <a2>yummy</a2>
+            <a3>活动区</a3>
+        </div>
+        <div id="articleTextPanel">
+            <form action="php/mailSend.php" method="POST">
+                <a style="display: block">Send To :</a>
+                <input style="width: 300px" type="text" name="mail_to"/><br/>
+                <a style="display: block">Title :</a>
+                <input style="width: 300px" type="text" name="mail_title"/><br/>
+                <a>Mail type&nbsp;:&nbsp;&nbsp;</a>
+                <input type="radio" id="mail_type0" name="mail_type" value="TXT"/>
+                <a>txt</a>
+                <input type="radio" id="mail_type1" name="mail_type" value="HTML"/>
+                <a>html</a>
+                <br/>
+                <a style="color: darkgrey">You can also choose a file to fill the mail content&nbsp;:&nbsp;&nbsp;</a><br/>
+                <div id="way_block1" style="color: darkgrey">
+                    <a>Filename:</a>
+                    <input type="file" name="file" accept=".txt,.html" id="file" onchange="fileOnchange()"/>
+                </div>
+                <div id="way_block0">
+                    <a style="display: block">Content :</a>
+                    <textarea  style="width: 500px;height: 500px" name="mail_content" id="content"></textarea>
+                </div>
+                <input type="submit" value="submit"/>
+            </form>
+        </div>
+    </div>
+    <div id="footPanel">
+        <div id="linkIcoPanel">
+            <div class="linkIcos"
+                 onclick="window.open('https://github.com/AkiyamaYummy')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/githubIco.png')">
+            </div>
+            <div class="linkIcos"
+                 onclick="window.open('https://weibo.com/MPA001')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/weiboIco.png')">
+            </div>
+            <div class="linkIcos"
+                 onclick="alert('邮件功能还没做，抱歉哈。')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/emailIco.png')">
+            </div>
+            <div class="linkIcosTitle"><a>Github</a></div>
+            <div class="linkIcosTitle"><a>新浪微博</a></div>
+            <div class="linkIcosTitle"><a>邮件投递</a></div>
+        </div>
+        <div id="footPanelBottomLine">
+            <a>Copyright&nbsp;&#169;&nbsp;2017&nbsp;-&nbsp;2017&nbsp;akiyama&nbsp;yummy&nbsp;All rights reserved.</a>
+        </div>
+    </div>
+</div>
+<div id="returnTopButton" onclick="returnTop()"></div>
+<script type="text/javascript" src="js/mainShell.js"></script>
+<script>
+    function bodyOnload() {
+        /*if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
+            window.location.href = "mobile.html"; */
+        document.getElementById("mail_type0").checked = true;
+        fileOnchange();
+        mainShellOnload();
+    }
+    function fileOnchange() {
+        var reader = new FileReader();
+        var filetoread = document.getElementById("file").files[0];
+        if(filetoread == null)return;
+        reader.onload = function (e) {
+            //alert(e.target.result);
+            document.getElementById("content").innerText = e.target.result;
+        };
+        //alert(reader);
+        reader.readAsText(filetoread);
+    }
+</script>
+</body>
+</html>

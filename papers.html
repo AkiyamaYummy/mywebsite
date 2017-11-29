@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>网站？已经在做了。</title>
+    <link rel="icon" href="pics/mainico.ico" type="image/x-icon"/>
+    <link href="css/mainShell.css" rel="stylesheet" type="text/css"/>
+    <link href="css/articlePageText.css" rel="stylesheet" type="text/css"/>
+    <style>
+        #articleTitlePic{
+            background-image: url("pics/paperlistPage/bg.png");
+        }
+    </style>
+</head>
+<body onload="bodyOnload()" id="body">
+<div id="loadMask">
+    <div><div></div></div>
+    <a>LOADING...<br>PLEASE&nbsp;WAIT</a>
+</div>
+<div id="titlePicDiv" onselectstart="return false">
+    <div id="topButtonPanel">
+        <div id="topButtonPanelBack">
+            <ul id="buttonList">
+                <a href="index.html">
+                    <img src="pics/mainpage/titles/topico.png"
+                         id="topIco" title="首页"/>
+                </a>
+                <li><a>注册</a></li>
+                <li><a>登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="mainPanel">
+    <div id="mainPanelTopButtonPanel" onselectstart="return false">
+        <ul id="mainPanelTopButtonList">
+            <a onclick="mainPanelTopButtonListOnclice(0)"><li>首页
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(1)"><li>文章
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(2)"><li>下棋
+                <div></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(3)"><li style="color: #326987">试题
+                <div style="background: #326987"></div>
+            </li></a>
+            <a onclick="mainPanelTopButtonListOnclice(4)"><li>就这
+                <div></div>
+            </li></a>
+        </ul>
+    </div>
+    <div id="textPanel">
+        <div id="articleTitlePic">
+            <div id="articleTitlePicMask"></div>
+            <a1>各科往年试卷汇总</a1>
+            <a2>便民，高效，规范，廉洁。</a2>
+        </div>
+        <div id="articleAuthorPanel">
+            <a1>2017/11/18&nbsp;22:00</a1>
+            <a2>yummy</a2>
+            <a3>活动区</a3>
+        </div>
+        <div id="articleTextPanel">
+            <p>汇总一下我校各科的往年试卷，有愿意提供试卷到这个平台的朋友，请随便联系我。</p>
+        </div>
+    </div>
+    <div id="footPanel">
+        <div id="linkIcoPanel">
+            <div class="linkIcos"
+                 onclick="window.open('https://github.com/AkiyamaYummy')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/githubIco.png')">
+            </div>
+            <div class="linkIcos"
+                 onclick="window.open('https://weibo.com/MPA001')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/weiboIco.png')">
+            </div>
+            <div class="linkIcos"
+                 onclick="alert('邮件功能还没做，抱歉哈。')"
+                 style="background-image:
+                         url('pics/mainpage/footPanel/emailIco.png')">
+            </div>
+            <div class="linkIcosTitle"><a>Github</a></div>
+            <div class="linkIcosTitle"><a>新浪微博</a></div>
+            <div class="linkIcosTitle"><a>邮件投递</a></div>
+        </div>
+        <div id="footPanelBottomLine">
+            <a>Copyright&nbsp;&#169;&nbsp;2017&nbsp;-&nbsp;2017&nbsp;akiyama&nbsp;yummy&nbsp;All rights reserved.</a>
+        </div>
+    </div>
+</div>
+<div id="returnTopButton" onclick="returnTop()"></div>
+<script type="text/javascript" src="js/mainShell.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script>
+    function bodyOnload() {
+        /*if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
+            window.location.href = "mobile.html"; */
+    	var date = (new Date()).getTime();
+		var uid = md5_code(date+"_"+Math.floor(Math.random()*1000000)
+            +"_"+Math.floor(Math.random()*1000000));
+        xmlSend({"type":"get_file_list","username":uid},"php/paper.php");
+        mainShellOnload();
+    }
+    var xmlhttp;
+    function xmlSend(arrToSend,urlToSend) {
+        var is1 = 1;
+        if (window.XMLHttpRequest) xmlhttp=new XMLHttpRequest();
+        else xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        xmlhttp.onreadystatechange = function () {
+            xmlReadyStateChange();
+        };
+        for(let key in arrToSend) {
+            urlToSend += ((is1==1?"?":"&")+key+"="+arrToSend[key]);
+            is1 = 0;
+        }
+        //alert(urlToSend);
+        xmlhttp.open("GET",urlToSend,true);
+        xmlhttp.send();
+    }
+    function xmlReadyStateChange() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            //alert(xmlhttp.responseText);
+            var resarr = JSON.parse(xmlhttp.responseText);
+			var keyarr = new Array();
+//            var skipcon = 0;
+			for(let key in resarr) {
+                if(key == "."||key == "..")continue;
+				keyarr.push(key);
+			}
+			keyarr.sort();
+			for(let r in keyarr){
+            	var a = getAElement(keyarr[r],resarr[keyarr[r]]);
+        	    var p = document.createElement("p");
+    	        p.appendChild(a);
+	            articleTextPanel.appendChild(p);
+		}
+        }
+    }
+    function getAElement(name,url) {
+        var resa = document.createElement("a");
+        resa.href = url;
+        resa.innerHTML = name;
+        resa.style.color = "green";
+        return resa;
+    }
+</script>
+</body>
+</html>

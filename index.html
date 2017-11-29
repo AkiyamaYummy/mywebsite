@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <title>网站？已经在做了。</title>
+        <link rel="icon" href="pics/mainico.ico" type="image/x-icon"/>
+        <link href="css/mainShell.css" rel="stylesheet" type="text/css"/>
+        <link href="css/slidePanel.css" rel="stylesheet" type="text/css"/>
+        <link href="css/mainPageRightList.css" rel="stylesheet" type="text/css"/>
+        <link href="css/mainPageMidPanel.css" rel="stylesheet" type="text/css"/>
+        <link href="css/mainPageShowPanel.css" rel="stylesheet" type="text/css"/>
+        <link href="css/wuziqi.css" rel="stylesheet" type="text/css"/>
+        <style type="text/css">
+            #textPanel{
+                width: 1100px;
+                margin: 0px;
+            }
+            #wuziqiPanel{
+                width: 100%;
+                height: 625px;
+                background: url("pics/mainpage/workdisplay/wuziqi_desktop/bg.png");
+                padding-top: 15px;
+                border-radius: 10px 10px 10px 10px;
+                overflow: hidden;
+            }
+            #wuziopPanel{
+                width: 1100px;
+                height: 640px;
+                margin-top: -15px;
+                background: hsla(0,0%,10%,1);
+                border-radius: 10px 10px 10px 10px;
+                opacity: 0.6;
+                position: absolute;
+            }
+            .exeButton{
+                background: hsla(0,0%,40%,1);
+                opacity: 0.88;
+                margin-left: 934px;
+            }
+            #broadcast{
+                background: hsla(0,0%,40%,1);
+                opacity: 0.88;
+                margin-left: 732px;
+            }
+            #checkerboard{
+                background: hsla(0,0%,50%,1);
+                opacity: 0.88;
+                margin-left: 130px;
+            }
+            #result{
+                color: darkred;
+            }
+		</style>
+	</head>
+	<body onload="bodyOnload()" onbeforeunload="bodyBeforeUnload()"
+          onselectstart="return false" id="body">
+        <div id="loadMask">
+            <div><div></div></div>
+            <a>LOADING...<br>PLEASE&nbsp;WAIT</a>
+        </div>
+        <div id="titlePicDiv">
+            <div id="topButtonPanel">
+                <div id="topButtonPanelBack">
+                <ul id="buttonList">
+                    <a href="index.html">
+                        <img src="pics/mainpage/titles/topico.png"
+                            id="topIco" title="首页"/>
+                    </a>
+                    <li><a>注册</a></li>
+                    <li><a>登录</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div id="mainPanel">
+            <div id="mainPanelTopButtonPanel">
+                <ul id="mainPanelTopButtonList">
+                    <a onclick="mainPanelTopButtonListOnclice(0)"><li style="color: #326987">首页
+                        <div style="background: #326987"></div>
+                    </li></a>
+                    <a onclick="mainPanelTopButtonListOnclice(1)"><li>文章
+                        <div></div>
+                    </li></a>
+                    <a onclick="mainPanelTopButtonListOnclice(2)"><li>下棋
+                        <div></div>
+                    </li></a>
+                    <a onclick="mainPanelTopButtonListOnclice(3)"><li>试题
+                        <div></div>
+                    </li></a>
+                    <a onclick="mainPanelTopButtonListOnclice(4)"><li>就这
+                        <div></div>
+                    </li></a>
+                </ul>
+            </div>
+            <div id="textPanel">
+                <div id="slidePanel">
+                    <ul id="displayPicList">
+                        <li class="displayPic" id="displayPic0">
+                            <img src="pics/mainpage/displays/display0.png"/>
+                            <div class="displayPicTitle">
+                                <a>蒙娜丽莎的微笑</a>
+                            </div>
+                        </li>
+                        <li class="displayPic" id="displayPic1">
+                            <img src="pics/mainpage/displays/display1.png"/>
+                            <div class="displayPicTitle">
+                                <a>神奇石膏在哪里</a>
+                            </div>
+                        </li>
+                        <li class="displayPic" id="displayPic2">
+                            <img src="pics/mainpage/displays/display2.png"/>
+                            <div class="displayPicTitle">
+                                <a>贫困家庭,勉强度日</a>
+                            </div>
+                        </li>
+                        <li class="displayPic" id="displayPic3">
+                            <img src="pics/mainpage/displays/display3.png"/>
+                            <div class="displayPicTitle">
+                                <a>动漫中的潮流穿搭,迷倒死宅程序员</a>
+                            </div>
+                        </li>
+                        <li class="displayPic" id="displayPic4">
+                            <img src="pics/mainpage/displays/display4.png"/>
+                            <div class="displayPicTitle">
+                                <a>珍爱生命,远离赌博——一个失足少女的自述</a>
+                            </div>
+                        </li>
+                        <li>
+                            <ul id="checkButtonList">
+                                <li onclick="switchPic(0)"
+                                    onmouseover="buttonPrint(0,'#C6E2FF')"
+                                    onmouseout="buttonPrint(0,'white')"
+                                    id="picSwitchButton0"></li>
+                                <li onclick="switchPic(1)"
+                                    onmouseover="buttonPrint(1,'#C6E2FF')"
+                                    onmouseout="buttonPrint(1,'white')"
+                                    id="picSwitchButton1"></li>
+                                <li onclick="switchPic(2)"
+                                    onmouseover="buttonPrint(2,'#C6E2FF')"
+                                    onmouseout="buttonPrint(2,'white')"
+                                    id="picSwitchButton2"></li>
+                                <li onclick="switchPic(3)"
+                                    onmouseover="buttonPrint(3,'#C6E2FF')"
+                                    onmouseout="buttonPrint(3,'white')"
+                                    id="picSwitchButton3"></li>
+                                <li onclick="switchPic(4)"
+                                    onmouseover="buttonPrint(4,'#C6E2FF')"
+                                    onmouseout="buttonPrint(4,'white')"
+                                    id="picSwitchButton4"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="rightList">
+                    <div id="rightListTitle">
+                        <a>文章一览</a>
+                    </div>
+                    <div class="rightListItem">
+                        <a1>蒙娜丽莎的微笑</a1>
+                        <a2>《蒙娜丽莎》是意大利文艺复兴时期著名画家列奥纳多·达·芬奇创作的绘画作品。《蒙娜丽莎》 成功地塑造了资本主义上升时期一位城市有产阶级的妇女形象。</a2>
+                    </div>
+                    <div class="rightListItem">
+                        <a1>神奇石膏在哪里</a1>
+                        <a2>没有其他的，只是一个石膏像。</a2>
+                    </div>
+                    <div class="rightListItem">
+                        <a1>贫困家庭,勉强度日</a1>
+                        <a2>1945年的上海贫困家庭，靠吃阳澄湖大闸蟹度日。</a2>
+                    </div>
+                    <div class="rightListItem">
+                        <a1>动漫中的潮流穿搭,迷倒死宅程序员</a1>
+                        <a2>绫波丽（绫波レイ）</a2>
+                    </div>
+                </div>
+                <div id="midPanel">
+                    <div class="midPanelItemTitles" id="midPanelItemTitle0"
+                         style="margin-left: 2px"
+                         onmouseover="midItemZoom(0,1)"
+                         onmouseout="midItemZoom(0,-1)">
+                        <a1>珍爱生命，远离赌博。</a1>
+                        <a2>失足少女自述心路历程。</a2>
+                    </div>
+                    <div class="midPanelItems" id="midPanelItem0"
+                         style="background-image:
+                            url('pics/mainpage/displays/display4.png');
+                            margin-left: 2px"
+                         onmouseover="midItemZoom(0,1)"
+                         onmouseout="midItemZoom(0,-1)">
+                    </div>
+                    <div class="midPanelItemTitles" id="midPanelItemTitle1"
+                         style="margin-left: 357px"
+                         onmouseover="midItemZoom(1,1)"
+                         onmouseout="midItemZoom(1,-1)">
+                        <a1>神奇的石膏像</a1>
+                        <a2>贼神奇</a2>
+                    </div>
+                    <div class="midPanelItems" id="midPanelItem1"
+                         style="background-image:
+                            url('pics/mainpage/displays/display1.png');
+                            margin-left: 357px"
+                         onmouseover="midItemZoom(1,1)"
+                         onmouseout="midItemZoom(1,-1)">
+                    </div>
+                    <div class="midPanelItemTitles" id="midPanelItemTitle2"
+                         style="margin-left: 712px"
+                         onmouseover="midItemZoom(2,1)"
+                         onmouseout="midItemZoom(2,-1)">
+                        <a1>贫困家庭如何摄取蛋白质？</a1>
+                        <a2>烹饪秘方，咱们家门口的大闸蟹。</a2>
+                    </div>
+                    <div class="midPanelItems" id="midPanelItem2"
+                         style="background-image:
+                            url('pics/mainpage/displays/display2.png');
+                            margin-left: 712px"
+                         onmouseover="midItemZoom(2,1)"
+                         onmouseout="midItemZoom(2,-1)">
+                    </div>
+                    <div id="midPanelMoreButton">
+                        <a>MORE</a></div>
+                </div>
+                <div id="showPanel">
+                    <div class="showPanelTitle">
+                        <div></div>
+                        <a>随缘展示区</a>
+                    </div>
+                    <div id="wuziqiPanel">
+                        <div id="wuziopPanel"></div>
+                        <div id="checkerboard">
+                            <h1 id="result"></h1>
+                        </div>
+                        <div class="exeButton" id="olbt" style="margin-top: 5px"
+                             onclick="linkStart()">
+                            <a>联<br/>机<br/>对<br/>局</a>
+                        </div>
+                        <div class="exeButton" style="margin-top: 157px"
+                             onclick="if(olgame==0)clearBoard()">
+                            <a>清<br/>空<br/>棋<br/>盘</a>
+                        </div>
+                        <div id="broadcast"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="footPanel">
+                <div id="linkIcoPanel">
+                    <div class="linkIcos"
+                         onclick="window.open('https://github.com/AkiyamaYummy')"
+                         style="background-image:
+                         url('pics/mainpage/footPanel/githubIco.png')">
+                    </div>
+                    <div class="linkIcos"
+                         onclick="window.open('https://weibo.com/MPA001')"
+                         style="background-image:
+                         url('pics/mainpage/footPanel/weiboIco.png')">
+                    </div>
+                    <div class="linkIcos"
+                         onclick="alert('邮件功能还没做，抱歉哈。')"
+                         style="background-image:
+                         url('pics/mainpage/footPanel/emailIco.png')">
+                    </div>
+                    <div class="linkIcosTitle"><a>Github</a></div>
+                    <div class="linkIcosTitle"><a>新浪微博</a></div>
+                    <div class="linkIcosTitle"><a>邮件投递</a></div>
+                </div>
+                <div id="footPanelBottomLine">
+                    <a>Copyright&nbsp;&#169;&nbsp;2017&nbsp;-&nbsp;2017&nbsp;akiyama&nbsp;yummy&nbsp;All rights reserved.</a>
+                </div>
+            </div>
+        </div>
+        <div id="returnTopButton" onclick="returnTop()"></div>
+        <script type="text/javascript" src="js/slidePanel.js"></script>
+        <script type="text/javascript" src="js/mainShell.js"></script>
+        <script type="text/javascript" src="js/mainPageMidPanel.js"></script>
+        <script type="text/javascript" src="js/md5.js"></script>
+        <script type="text/javascript" src="js/wuziqi.js"></script>
+        <script>
+            function bodyOnload() {
+                /*if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
+                    window.location.href = "mobile.html"; */
+                slideInit();
+                midPanelInit();
+                CHESSMAN1_COLOR = "hsla(0,0%,20%,1)";
+                LINE_COLOR = "hsla(0,0%,85%,1)";
+                wuziqiInit();
+                mainShellOnload();
+            }
+            function bodyBeforeUnload() {
+                wuziqibodyBeforeUnload();
+            }
+        </script>
+	</body>
+</html>

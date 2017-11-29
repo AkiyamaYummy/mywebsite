@@ -1,0 +1,67 @@
+#midPanel{
+    height: 150px;
+    width: 100%;
+    position: relative;
+}
+.midPanelItems{
+    position: absolute;
+    z-index: 4;
+    height: 100px;
+    width: 345px;
+    margin-top: 40px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+.midPanelItemTitles{
+    position: absolute;
+    z-index: 5;
+    height: 100px;
+    width: 345px;
+    margin-top: 40px;
+    opacity: 0;
+    -moz-opacity:0;
+    text-align: center;
+    cursor: pointer;
+}
+.midPanelItemTitles a1{
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    display: block;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.midPanelItemTitles a2{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-weight: lighter;
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+#midPanelMoreButton{
+    margin-top: 40px;
+    margin-left: 1067px;
+    position: absolute;
+    height: 100px;
+    width: 31px;
+    background: hsla(1,0%,60%,1);
+    cursor: pointer;
+    border-radius: 2px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    text-align: center;
+    color: white;
+}
+#midPanelMoreButton a{
+    display: block;
+    font-size: 21px;
+    margin-top: 21px;
+    margin-left: 2px;
+    line-height: 100%;
+    font-family: "Arial Black";
+    transform: rotate(90deg);
+}
+#midPanelMoreButton:focus,#midPanelMoreButton:hover{
+    background: #326987;
+}

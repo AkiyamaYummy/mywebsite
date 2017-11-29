@@ -1,0 +1,31 @@
+#tagBall{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+#tagBallCatcher{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+}
+#tagBall a{
+    position: absolute;
+    font-family: "楷体";
+    color: grey;
+    font-weight: bold;
+    cursor: pointer;
+    display:inline-block;
+}
+#tagBall a:focus,#tagBall a:hover{
+    color: #326987;
+}
+#tagBallPanel{
+    margin-top: 30px;
+    height: 340px;
+    width: 100%;
+}

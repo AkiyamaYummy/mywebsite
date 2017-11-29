@@ -1,0 +1,84 @@
+#textPanel{
+    width: 1100px;
+    margin: 0px;
+    min-height: 600px;
+}
+#articleTitlePic{
+    width: 1096px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin: 0px 2px;
+    position: relative;
+}
+#articleTitlePic a1{
+    display: block;
+    font-family: "lucida grande";
+    text-shadow: 1px 1px 6px black;
+    font-size: 45px;
+    height: 58px;
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 287px;
+    color: hsla(0,0%,100%,1);
+    font-weight: bold;
+    padding: 0px 100px;
+}
+#articleTitlePic a2{
+    display: block;
+    font-family: "lucida grande";
+    text-shadow: 1px 1px 6px black;
+    font-size: 20px;
+    height: 27px;
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 350px;
+    color: hsla(0,0%,100%,1);
+    padding: 0px 100px;
+}
+#articleTitlePicMask{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    background-image: -webkit-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background-image: -moz-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background-image: -o-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background-image: linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background-size: 100% 100px;
+}
+#articleAuthorPanel{
+    height: 60px;
+    width: 100%;
+}
+#articleAuthorPanel a1{
+    float: right;
+    margin-top: 5px;
+    margin-right: 110px;
+    font-size: 15px;
+    color: grey;
+}
+#articleAuthorPanel a2{
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 15px;
+    color: grey;
+}
+#articleAuthorPanel a3{
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 15px;
+    color: grey;
+}
+#articleTextPanel{
+    margin: 40px 100px 200px 100px;
+}
+#articleTextPanel p{
+    font-size: 19px;
+    font-family: "lucida grande";
+    font-weight: lighter;
+    color: hsla(0,0%,10%,1);
+}
