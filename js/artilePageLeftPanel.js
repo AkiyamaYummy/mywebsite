@@ -10,6 +10,7 @@ var blockIni = 10,blockTot = 31,blockCon = 0,minDif = 100;
 function articleLeftPanelInit() {
     for(var i=0;i<blockIni;i++){
         articleLeftPanel.appendChild(getAritleBlock(messageDemo));
+        picLoad(blockCon);
         blockCon ++;
     }
 }
@@ -24,6 +25,7 @@ function addAritleBlock() {
     for(var i=0;i<blockConOld;i++){
         if(blockCon >= blockTot) break;
         articleLeftPanel.appendChild(getAritleBlock(messageDemo));
+        picLoad(blockCon);
         blockCon ++;
     }
 }
@@ -37,10 +39,21 @@ function getAritleBlock(bloMessage) {
     var t3 = document.createElement("a3");
     t3.innerHTML = bloMessage.introduction;
     var pic = document.createElement("pic");
-    pic.style.backgroundImage = "url('"+bloMessage.cover+"')"
+    pic.setAttribute("id","artileCover"+blockCon);
+    pic.style.backgroundImage = "url('"+bloMessage.cover+"')";
+    pic.style.opacity = 0;
     res.appendChild(t1);
     res.appendChild(t2);
     res.appendChild(t3);
     res.appendChild(pic);
     return res;
+}
+var picLoadFrame = 40,msPerFrame = 25;
+function picLoad(eleid) {
+    var ele = document.getElementById("artileCover"+eleid);
+    var opNow = parseFloat(ele.style.opacity);
+    if(opNow >= 1)return;
+    var opnext = Math.pow(Math.sqrt(opNow)+1/picLoadFrame,2);
+    ele.style.opacity = opnext;
+    setTimeout("picLoad("+eleid+")",msPerFrame);
 }
