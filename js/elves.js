@@ -19,10 +19,10 @@ function resizeInit() {
     wallBottom = ele.offsetTop+FLOOR_HEIGHT;
 }
 function eleOnMouseDown(e) {
-    var left = e.clientX,top = e.clientY;
-    mousePosiX = left;mousePosiY = top;
     if(elvesTimer != null)clearTimeout(elvesTimer);
     elvesTimer = null;
+    var left = e.clientX,top = e.clientY;
+    mousePosiX = left;mousePosiY = top;
     lastTime = (new Date()).getTime();
     lastTopPosi = ele.offsetTop;
     lastLeftPosi = ele.offsetLeft;
@@ -33,6 +33,8 @@ function bodyOnMouseMove(e) {
     var left = e.clientX,top = e.clientY;
     //alert(left+" "+top);
     if(mousePosiX!=-1 || mousePosiY!=-1){
+        if(elvesTimer != null)clearTimeout(elvesTimer);
+        elvesTimer = null;
         eleMove(left-mousePosiX,top-mousePosiY);
         mousePosiX = left;mousePosiY = top;
         if((movePointCon++)%5 == 0) {
@@ -48,9 +50,11 @@ function bodyOnMouseMove(e) {
     }
 }
 var backFrame = 20,msPerFrameToBack = 5,lOneStep,tOneStep;
-var acceleration = 0.05,collisionLoss = 0.2,slideLoss = 0.1;
+var acceleration = 0.05,collisionLoss = 0.15,slideLoss = 0.1;
 var stopSpeed = 3;
 function eleOnMouseUp(e) {
+    if(elvesTimer != null)clearTimeout(elvesTimer);
+    elvesTimer = null;
     mousePosiX = mousePosiY = -1;
     /*
     lOneStep = (leftBase-ele.offsetLeft)/backFrame;
