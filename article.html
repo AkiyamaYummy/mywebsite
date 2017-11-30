@@ -9,6 +9,7 @@
     <link href="css/tagBall.css" rel="stylesheet" type="text/css"/>
     <link href="css/artilePageLeftPanel.css" rel="stylesheet" type="text/css"/>
     <link href="css/artilePageRightPanel.css" rel="stylesheet" type="text/css"/>
+    <link href="css/elves.css" rel="stylesheet" type="text/css"/>
     <style type="text/css">
         #textPanel{
             width: 1100px;
@@ -23,6 +24,7 @@
     <div><div></div></div>
     <a>LOADING...<br>PLEASE&nbsp;WAIT</a>
 </div>
+<div id="elves"></div>
 <div id="titlePicDiv">
     <div id="topButtonPanel">
         <div id="topButtonPanelBack">
@@ -171,12 +173,14 @@
 <script type="text/javascript" src="js/mainShell.js"></script>
 <script type="text/javascript" src="js/tagBall.js"></script>
 <script type="text/javascript" src="js/artilePageLeftPanel.js"></script>
+<script type="text/javascript" src="js/elves.js"></script>
 <script>
     function bodyOnload() {
         /*if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
             window.location.href = "mobile.html"; */
         tagBallInit();
         articleLeftPanelInit();
+        elvesInit();
         mainShellOnload();
     }
 </script>
