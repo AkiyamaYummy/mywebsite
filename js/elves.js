@@ -7,7 +7,6 @@ function elvesInit() {
     ele.setAttribute("onmouseup","eleOnMouseUp(event)");
     body.setAttribute("onmousemove","bodyOnMouseMove(event)");
     resizeInit();
-    window.onresize = "resizeInit()";
 }
 function resizeInit() {
     ele.style.left = "";
